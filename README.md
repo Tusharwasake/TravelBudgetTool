@@ -1,5 +1,3 @@
-# TravelBudgetTool
-
 # **Travel Budget Planning Tool**
 
 **Context:**
