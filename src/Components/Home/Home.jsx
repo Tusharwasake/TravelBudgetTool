@@ -3,6 +3,8 @@ import Navbar from './NavBar'
 import Hero from './Hero';
 import Features from './Features';
 import Footer from './Footer';
+import AboutUs from './AboutUs'
+import ContactSection from './Contact'
 
 function Home() {
   return (
@@ -10,6 +12,8 @@ function Home() {
     <Navbar/>
     <Hero/>
     <Features/>
+    <AboutUs/>
+    <ContactSection/>
     <Footer/>
    </>
   )

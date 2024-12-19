@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./Components/Auth/Login";
 import SingUp from "./Components/Auth/SingUp";
 
+
 function App() {
   return (
     <Router>
