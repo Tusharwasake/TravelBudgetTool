@@ -9,7 +9,7 @@ function Navbar() {
           <div className="flex items-center space-x-2">
             <Plane className="h-6 w-6 text-blue-500" />
             <span className="text-xl font-semibold text-gray-900">
-              Travel Budget Planning Tool
+              <Link to='/'>Travel Budget Planning Tool</Link>
             </span>
           </div>
 
@@ -18,7 +18,7 @@ function Navbar() {
             <Link to="#about">About</Link>
             <Link to="#contact">Contact</Link>
             <button className="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition-colors">
-              Get Started
+              <Link to='/login'>Get Started</Link>
             </button>
           </div>
         </div>
