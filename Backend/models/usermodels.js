@@ -15,6 +15,7 @@ const UserSchema = new mongoose.Schema(
       required: true,
       unique: true,
       lowercase: true,
+      trim: true,
       validate: {
         validator: function (value) {
           return /^\S+@\S+\.\S+$/.test(value);
@@ -27,6 +28,7 @@ const UserSchema = new mongoose.Schema(
       required: true,
     },
   },
+
   {
     timestamps: true, // Use the plural form
   }

@@ -9,8 +9,11 @@ app.use(express.json());
 
 app.use("/user", userRouter);
 
-db();
-
 app.listen(process.env.SERVER_PORT, () => {
-  console.log("server has started http://localhost:3000");
+  try {
+    console.log("server has started http://localhost:3000");
+    db();
+  } catch (error) {
+    console.log(error.message);
+  }
 });
