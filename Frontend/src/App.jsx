@@ -6,7 +6,7 @@ import Home from "./Components/Home/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./Components/Auth/Login";
 import SingUp from "./Components/Auth/SingUp";
-
+import axios from "axios";
 function App() {
   return (
     <Router>
