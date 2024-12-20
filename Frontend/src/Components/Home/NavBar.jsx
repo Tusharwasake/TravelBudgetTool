@@ -15,8 +15,8 @@ function Navbar() {
 
           <div className="hidden md:flex items-center space-x-8">
             <a href="/#features">Features</a>
-            <Link to="#about">About</Link>
-            <Link to="#contact">Contact</Link>
+            <Link to="/#about">About</Link>
+            <Link to="/#contact">Contact</Link>
             <button className="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition-colors">
               <Link to='/login'>Get Started</Link>
             </button>
