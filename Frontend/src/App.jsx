@@ -8,7 +8,6 @@ import Login from "./Components/Auth/Login";
 import SingUp from "./Components/Auth/SingUp";
 import AboutUs from "./Components/Home/AboutUs";
 import ContactSection from "./Components/Home/Contact";
-
 function App() {
   return (
     <Router>
