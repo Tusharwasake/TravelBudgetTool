@@ -19,9 +19,11 @@ function SingUp() {
       [name]: value,
     });
   };
+  const [wait, setWait] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent the default form submission
+    setWait('wait')
 
     try {
       const response = await axios.post(
@@ -35,8 +37,12 @@ function SingUp() {
         password: "",
       });
       setMsg("Account Created");
+
     } catch (error) {
       setMsg(error.response?.data?.msg || "Something went wrong!");
+    }finally{
+      setWait('')
+
     }
   };
 
@@ -167,7 +173,7 @@ function SingUp() {
                 type="submit"
                 className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
-                Sign Up
+                {(wait == 'wait') ? 'Wait...' : 'Sign Up'}
               </button>
             </div>
           </form>

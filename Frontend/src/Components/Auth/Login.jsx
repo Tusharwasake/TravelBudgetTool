@@ -8,6 +8,7 @@ function Login() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [msg, setMsg] = useState(""); // State to display messages
+const [wait, setWait] = useState('');
 
   // Handle form input change
   const handleChange = (e) => {
@@ -17,7 +18,8 @@ function Login() {
 
   // Handle form submission
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault();
+    setWait('wait')
     try {
       const response = await axios.post(
         "https://travelbudgettool.onrender.com/user/signin",
@@ -28,12 +30,14 @@ function Login() {
     } catch (error) {
       const errorMessage = error.response?.data?.msg || "Login Failed!";
       setMsg(errorMessage);
+    }finally{
+      setWait('')
     }
   };
   // Redirect to the dashboard
   useEffect(() => {
     if (msg === "Login Successful!") {
-      navigate("/about");
+      navigate("/dashboard");
     }
   }, [msg, navigate]);
 
@@ -124,7 +128,7 @@ function Login() {
                 type="submit"
                 className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
-                Sign in
+                {(wait == 'wait') ? 'Wait...' : 'Sign In'}
               </button>
             </div>
           </form>
