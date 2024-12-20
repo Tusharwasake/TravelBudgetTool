@@ -23,8 +23,8 @@ function Navbar() {
           {/* Desktop Navbar Links */}
           <div className="hidden md:flex items-center space-x-8">
             <a href="/#features">Features</a>
-            <Link to="#about">About</Link>
-            <Link to="#contact">Contact</Link>
+            <Link to="/about">About</Link>
+            <Link to="/contact">Contact</Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -57,10 +57,10 @@ function Navbar() {
           <a href="/#features" onClick={() => setIsMenuOpen(false)}>
             Features
           </a>
-          <Link to="#about" onClick={() => setIsMenuOpen(false)}>
+          <Link to="/about" onClick={() => setIsMenuOpen(false)}>
             About
           </Link>
-          <Link to="#contact" onClick={() => setIsMenuOpen(false)}>
+          <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
             Contact
           </Link>
         </div>
