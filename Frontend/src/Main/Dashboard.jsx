@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { Bell, Home, BarChart2, FileText, Wallet, File, Repeat, Settings, ChevronLeft } from 'lucide-react';
 import Overview from './Main-Components/Overview';
 import Transaction from './Main-Components/Transaction';
-import Profile from './Main-Components/Profile';
+// import Profile from './Main-Components/Profile';
 
 import Test from './Main-Components/SetBudget';
+import Profile from './Main-Components/Profile'
 
 function Dashboard() {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -133,6 +134,7 @@ function Dashboard() {
           <Transaction/>
           <Profile/>
           <Test/>
+          
 
           
           
