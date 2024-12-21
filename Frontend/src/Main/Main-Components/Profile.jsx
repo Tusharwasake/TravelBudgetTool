@@ -170,26 +170,12 @@ const Profile = () => {
         </div>
 
         {/* Recent Activity */}
-        <div className="bg-white border border-gray-200 rounded-lg p-6">
-          <h3 className="text-lg font-semibold mb-4">Recent Activity</h3>
-          <div className="space-y-4">
-            {user.recentActivity.map((activity, index) => (
-              <div key={index} className="flex gap-4 items-center">
-                <div
-                  className={`w-8 h-8 ${activity.bgColor} ${activity.textColor} rounded-full flex items-center justify-center`}
-                >
-                  <i className={activity.icon}></i>
-                </div>
-                <div>
-                  <p className="text-sm font-medium">{activity.text}</p>
-                  <p className="text-xs text-gray-500">{activity.time}</p>
-                </div>
-              </div>
-            ))}
+        
+          
           </div>
         </div>
-      </div>
-    </div>
+      
+    
   );
 };
 
