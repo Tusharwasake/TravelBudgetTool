@@ -12,6 +12,10 @@ const budgetSchema = new Schema(
       required: true,
       trim: true,
     },
+
+    status: {
+      type: Boolean,
+    },
     numberOfDays: {
       type: Number,
       required: true,
