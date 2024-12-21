@@ -12,7 +12,7 @@ const createBudget = async (req, res) => {
       return res.status(400).json({ message: "Invalid user" });
     }
 
-    const { city, numberOfDays, totalBudget } = req.body;
+    const { city, numberOfDays, totalBudget , status} = req.body;
 
     if (!city || !numberOfDays || !totalBudget) {
       return res.status(400).json({ message: "All fields are required" });
@@ -23,6 +23,7 @@ const createBudget = async (req, res) => {
       city,
       numberOfDays,
       totalBudget,
+      status
     });
 
     res.status(201).json({ message: "Budget created successfully", budget });
