@@ -127,8 +127,8 @@ const transporter = nodemailer.createTransport({
   host: "smtp.ethereal.email",
   port: 587,
   auth: {
-    user: "hannah4@ethereal.email",
-    pass: "PzAKSv42UyMsV34jQA",
+    user: process.env.SENDER_MAIL_EMAIL,
+    pass: process.env.SENDER_MAIL_PASSWORD,
   },
 });
 
@@ -170,7 +170,7 @@ const forgotpassword = async (req, res) => {
 
 const resetpassword = async (req, res) => {
   const { otp, email, password } = req.body;
-  console.log(email,password)
+  console.log(email, password);
   // Validate input
   if (!otp) {
     return res.status(400).json({ msg: "otp required" });
@@ -190,12 +190,13 @@ const resetpassword = async (req, res) => {
 
     const result = await userModel.updateOne(
       { email },
-      {$set:{password:hashpassword}}
+      { $set: { password: hashpassword } }
     );
     if (result.nModified === 0) {
-      return res.status(404).json({ msg: "User not found or password unchanged" });
+      return res
+        .status(404)
+        .json({ msg: "User not found or password unchanged" });
     }
-
 
     await OTP.deleteOne({ email });
 
