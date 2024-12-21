@@ -4,6 +4,8 @@ import Overview from './Main-Components/Overview';
 import Transaction from './Main-Components/Transaction';
 import Profile from './Main-Components/Profile';
 
+import Test from './Main-Components/SetBudget';
+
 function Dashboard() {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
@@ -130,6 +132,10 @@ function Dashboard() {
           <Overview />
           <Transaction/>
           <Profile/>
+          <Test/>
+
+          
+          
         </div>
       </div>
     </div>
