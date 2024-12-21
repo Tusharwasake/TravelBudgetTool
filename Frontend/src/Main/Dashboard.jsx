@@ -3,6 +3,7 @@ import { Bell, Home, BarChart2, FileText, Wallet, File, Repeat, Settings, Chevro
 import Overview from './Main-Components/Overview';
 import Transaction from './Main-Components/Transaction';
 import Profile from './Main-Components/Profile';
+import SetBudget from './Main-Components/SetBudget';
 
 function Dashboard() {
   // check is login
@@ -133,10 +134,11 @@ function Dashboard() {
 
         {/* Overview Component */}
         <div className="flex-1 p-6 bg-gray-100 md:ml-64 overflow-y-auto">
+        <SetBudget/>
+
           <Overview />
           <Transaction/>
           <Profile/>
-          <Test/>
 
           
           
