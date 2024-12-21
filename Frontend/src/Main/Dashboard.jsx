@@ -3,8 +3,13 @@ import { Bell, Home, BarChart2, FileText, Wallet, File, Repeat, Settings, Chevro
 import Overview from './Main-Components/Overview';
 import Transaction from './Main-Components/Transaction';
 import Profile from './Main-Components/Profile';
-
 function Dashboard() {
+  // check is login
+  let session = localStorage.getItem('isLogin');
+  if (!session) {
+    window.location.href = "/login";
+    return null;
+  }
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -114,10 +119,10 @@ function Dashboard() {
                 <a href="#profile" className="block px-4 py-2 hover:bg-gray-100">
                   Profile
                 </a>
-                <a href="#settings" className="block px-4 py-2 hover:bg-gray-100">
-                  Settings
-                </a>
-                <a href="#logout" className="block px-4 py-2 hover:bg-gray-100">
+                <a onClick={()=> {
+                  localStorage.clear();
+                  window.location.href = '/login';
+                }} className="block px-4 py-2 hover:bg-gray-100">
                   Logout
                 </a>
               </div>

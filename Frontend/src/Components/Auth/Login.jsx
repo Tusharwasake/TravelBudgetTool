@@ -25,8 +25,9 @@ const [wait, setWait] = useState('');
         "https://travelbudgettool.onrender.com/user/signin",
         formData
       );
-      console.log("Login Successful:", response.data);
+      // console.log("Login Successful:", response.data);
       setMsg("Login Successful!");
+      localStorage.setItem('isLogin', response?.data.user.id)
     } catch (error) {
       const errorMessage = error.response?.data?.msg || "Login Failed!";
       setMsg(errorMessage);
