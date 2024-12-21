@@ -3,22 +3,29 @@ import {
   signup,
   signin,
   forgotpassword,
-  //   otpverify,
   resetpassword,
 } from "../controllers/userController.js";
 import { authenticateToken } from "../middleware/tokenValidationMiddleware.js";
-import { refreshToken } from "../controllers/authcontrollers.js";
+import {
+  createBudget,
+  getBudgets,
+  addExpenseToBudget,
+  getBudgetWithExpenses,
+} from "../controllers/ExpenseBudgetController.js";
 
 const userRouter = Router();
 
 userRouter.post("/signup", signup);
 userRouter.post("/signin", signin);
-// userRouter.post("/refresh-token", refreshToken);
-userRouter.post("/forgot-password", forgotpassword);
 
+userRouter.post("/forgot-password", forgotpassword);
 userRouter.post("/reset-password", resetpassword);
 
-
 userRouter.use(authenticateToken);
+
+userRouter.post("/budgets", createBudget);
+userRouter.get("/budgets", getBudgets);
+userRouter.post("/budgets/expenses", addExpenseToBudget);
+userRouter.get("/budgets/:budgetId", getBudgetWithExpenses);
 
 export { userRouter };

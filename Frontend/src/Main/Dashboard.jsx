@@ -3,6 +3,7 @@ import { Bell, Home, BarChart2, FileText, Wallet, File, Repeat, Settings, Chevro
 import Overview from './Main-Components/Overview';
 import Transaction from './Main-Components/Transaction';
 import Profile from './Main-Components/Profile';
+
 function Dashboard() {
   // check is login
   let session = localStorage.getItem('isLogin');
@@ -135,6 +136,10 @@ function Dashboard() {
           <Overview />
           <Transaction/>
           <Profile/>
+          <Test/>
+
+          
+          
         </div>
       </div>
     </div>

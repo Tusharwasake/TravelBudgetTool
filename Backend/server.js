@@ -13,7 +13,7 @@ app.use("/user", userRouter);
 
 app.listen(process.env.SERVER_PORT, () => {
   try {
-    console.log("server has started http://localhost:3000");
+    console.log("server has started http://localhost:3001");
     db();
   } catch (error) {
     console.log(error.message);
