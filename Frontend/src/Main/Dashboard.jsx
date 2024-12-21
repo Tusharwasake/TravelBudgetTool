@@ -3,6 +3,7 @@ import { Bell, Home, BarChart2, FileText, Wallet, File, Repeat, Settings, Chevro
 import Overview from './Main-Components/Overview';
 import Transaction from './Main-Components/Transaction';
 import Profile from './Main-Components/Profile';
+import ExpenseTracker from './Main-Components/ExpenseTracker';
 
 function Dashboard() {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -130,6 +131,7 @@ function Dashboard() {
           <Overview />
           <Transaction/>
           <Profile/>
+          <ExpenseTracker/>
         </div>
       </div>
     </div>
